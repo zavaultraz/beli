@@ -20,8 +20,9 @@ class FrontEndController extends Controller
     public function detail(Product $product){
         $user = Auth::user();
         $categories = category::all();
+        $random = Testimonial::inRandomOrder()->limit(6)->get();
         $randomProduct = Product::whereKeyNot($product->id)->inRandomOrder()->limit(5)->get();
-        return view('front.details', compact('product', 'randomProduct','categories'));
+        return view('front.details', compact('product', 'randomProduct','categories', 'random'));
     }
 
     public function checkout(Product $product){

@@ -68,7 +68,9 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product) {}
+    public function show($id) {
+        // 
+    }
 
     /**
      * Show the form for editing the specified resource.
